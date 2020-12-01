@@ -3,9 +3,7 @@ var tableData = data;
 
 // Select the submit button
 var filter_btn = d3.select("#filter-btn");
-// var full_btn = d3.select("#full-btn");
-
-// var selected_dropdown = d3.select("#selected-dropdown").text("first");
+var full_btn = d3.select("#full-btn");
 
 var	tbody = d3.select('tbody');
 var columns =["datetime","city","state","country","shape","durationMinutes","comments"];
@@ -63,8 +61,32 @@ filter_btn.on("click", function() {
 
   console.log(inputValue);
 
-  var filteredData = tableData.filter(record => record.datetime === inputValue);
+  var selected = d3.select("#d3-dropdown").node().value;
+    console.log(selected);
 
-  update_table(filteredData);
+
+  // console.log(selected);
+    if (selected == "first") {
+      var filteredData = tableData.filter(record => record.datetime === inputValue);
+        console.log(selected)
+    } 
+    else if (selected == "second") {
+      var filteredData = tableData.filter(record => record.city === inputValue);
+        console.log(selected)
+    } 
+    else if (selected == "third") {
+      var filteredData = tableData.filter(record => record.state === inputValue);
+    } 
+    else if (selected == "fourth") {
+      var filteredData = tableData.filter(record => record.country === inputValue);
+    } 
+    else if (selected == "fifth") {
+      var filteredData = tableData.filter(record => record.shape === inputValue);
+    }
+
+
+    update_table(filteredData);
 });
+
+d3.select("#selected-dropdown").text("first");
 

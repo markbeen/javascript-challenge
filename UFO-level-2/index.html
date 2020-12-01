@@ -14,9 +14,10 @@ Include links to relevant sites and sheets within local directories >
 
 <! the body tag contains the document's body (i.e. items to be presented) >
 <body>
-  <div class="wrapper">
+  <div class="wrapper"> <! div defines a section in HTML. Class points to a class name in a style sheet >
     <nav class="navbar navbar-default">
-      <div class="container-fluid">
+
+      <div class="container-fluid">  <! Bootstrap container that spans the entire width >
 
         <! this container holds the little UFO/text in the upper left >
         <div class="navbar-header">
@@ -34,6 +35,7 @@ Include links to relevant sites and sheets within local directories >
       <p>The Truth is Out There Somewhere</p>
     </div>
 
+    <! the following is a bootstrap container >
     <div class="container">
       <div class="row margin-top-50">
         <div class="col-md-2">
@@ -44,13 +46,44 @@ Include links to relevant sites and sheets within local directories >
                 <form>
                   <div class="form-group">
                     <ul class="list-group" id="filters">
+
                       <li class="filter list-group-item">
-                        <label for="date">Enter a Date</label>
-                        <input class="form-control" id="datetime" type="text" placeholder="1/10/2010">
+                        <label for="dropdown">Enter Filter Item</label>
+                        <select id="d3-dropdown" type="button" class="btn btn-default">
+                        <option value="first">Date/Time</option>
+                        <option value="second">City</option>
+                        <option value="third">State</option>
+                        <option value="forth">Country</option>
+                        <option value="fifth">Shape</option>
+                        </select>
                       </li>
+
+                      <li class="filter list-group-item">
+                        <label for="date">Enter Filter Criterion</label>
+                        <input class="form-control" id="datetime" type="text" placeholder="Filter">
+                      </li>
+
                     </ul>
                   </div>
+
                   <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
+
+                <!-- <ul style="list-style-type:none;"> -->
+                <!-- <li class = "filter dropdown">
+                <label for="dropdown">Filter</label>
+                <select id="d3-dropdown" type="button" class="btn btn-default">
+                <option value="first">Date/Time</option>
+                <option value="second">City</option>
+                <option value="third">State</option>
+                <option value="forth">Country</option>
+                <option value="fifth">Shape</option>
+                </select>
+                </li> -->
+                <!-- </ul> -->
+                  <!-- <p id="selected-dropdown"></p> -->
+
+
+
                 </form>
               </div>
             </div>
