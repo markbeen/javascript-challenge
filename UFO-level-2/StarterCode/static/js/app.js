@@ -1,9 +1,9 @@
 // from data.js
 var tableData = data;
 
-// Select the submit button
+// Select buttons
 var filter_btn = d3.select("#filter-btn");
-var full_btn = d3.select("#full-btn");
+d3.select("#selected-dropdown").text("first");
 
 var	tbody = d3.select('tbody');
 var columns =["datetime","city","state","country","shape","durationMinutes","comments"];
@@ -88,5 +88,5 @@ filter_btn.on("click", function() {
     update_table(filteredData);
 });
 
-d3.select("#selected-dropdown").text("first");
+
 
